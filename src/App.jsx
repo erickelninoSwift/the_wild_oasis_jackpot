@@ -1,26 +1,27 @@
-import styled from "styled-components";
-import GlobalStyles from "./styles/GlobalStyles";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Cabins from "./pages/Cabins";
+import Bookings from "./pages/Bookings";
+import Login from "./pages/Login";
+import PageNotFound from "./pages/PageNotFound";
+import Account from "./pages/Account";
+import Settings from "./pages/Settings";
+import NewUsers from "./pages/Users";
 
-const H1 = styled.h1`
-  font-size: 45px;
-  font-weight: 600;
-  color: red;
-  background-color: yellow;
-  padding: 10px;
-`;
-
-const StyledApp = styled.div`
-  background-color: red;
-  padding: 20px;
-`;
 function App() {
   return (
-    <>
-      <GlobalStyles />
-      <StyledApp>
-        <H1>Hello Guys Jackpot here</H1>
-      </StyledApp>
-    </>
+    <Router>
+      <Routes>
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="login" element={<Login />} />
+        <Route path="booking" element={<Bookings />} />
+        <Route path="setting" element={<Settings />} />
+        <Route path="cabins" element={<Cabins />} />
+        <Route path="*" element={<PageNotFound />} />
+        <Route path="account" element={<Account />} />
+        <Route path="new" element={<NewUsers />} />
+      </Routes>
+    </Router>
   );
 }
 
