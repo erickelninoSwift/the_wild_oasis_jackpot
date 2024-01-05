@@ -44,3 +44,10 @@ const Link = styled.a`
     color: var(--color-brand-600);
   }
 `;
+import React from "react";
+
+function MainNav() {
+  return <nav>Jackpot</nav>;
+}
+
+export default MainNav;
