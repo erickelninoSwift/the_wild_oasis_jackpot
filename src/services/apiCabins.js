@@ -6,6 +6,6 @@ export const getAllCabins = async () => {
     console.log(error);
     throw new Error("there was an error while collecting all data");
   }
-
+  console.log(cabins);
   return cabins;
 };

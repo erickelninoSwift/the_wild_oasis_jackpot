@@ -38,3 +38,11 @@ const Discount = styled.div`
   font-weight: 500;
   color: var(--color-green-700);
 `;
+import React from "react";
+
+function CabinRow({ cabin }) {
+  console.log(cabin);
+  return <div>Row</div>;
+}
+
+export default CabinRow;
