@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import React from "react";
+
 const sizes = {
   small: css`
     font-size: 1.2rem;
@@ -48,8 +48,18 @@ const variations = {
   `,
 };
 
-function Button({ children, onClick }) {
-  return <button onClick={onClick}>{children}</button>;
-}
+const Button = styled.button`
+  border: none;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-sm);
+
+  ${(props) => sizes[props.size]}
+  ${(props) => variations[props.variation]}
+`;
+
+Button.defaultProps = {
+  variation: "primary",
+  size: "medium",
+};
 
 export default Button;
