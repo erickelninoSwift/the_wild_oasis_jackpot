@@ -9,3 +9,11 @@ export const getAllCabins = async () => {
   console.log(cabins);
   return cabins;
 };
+
+export const deleteCabins = async (id) => {
+  const { data, error } = await supabase.from("cabins").delete().eq("id", id);
+
+  if (error) throw new Error("There was an error while delete data ");
+
+  return data;
+};

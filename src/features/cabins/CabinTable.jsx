@@ -40,7 +40,7 @@ function CabinTable() {
   if (isLoading) return <Spinner />;
 
   if (error) return <span>{`Error was found ${error}`}</span>;
-  console.log(cabins);
+
   return (
     <Table role="table">
       <TableHeader role="row">
@@ -51,8 +51,8 @@ function CabinTable() {
         <div>Discount</div>
         <div></div>
       </TableHeader>
-      {cabins.map((data) => {
-        return <CabinRow cabin={data} key={data.id} />;
+      {cabins.map((currentCabin) => {
+        return <CabinRow key={currentCabin.id} currentData={currentCabin} />;
       })}
     </Table>
   );
