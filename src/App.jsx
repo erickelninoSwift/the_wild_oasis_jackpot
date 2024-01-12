@@ -4,6 +4,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Dashboard from "./pages/Dashboard";
@@ -46,6 +47,27 @@ function App() {
             <Route path="login" element={<Login />} />
           </Routes>
         </Router>
+        <Toaster
+          position="top-center"
+          containerStyle={{
+            margin: "8px",
+            maxWidth: "500px",
+            fontSize: "16px",
+            backgroundColor: "transparent",
+            color: "var(--color-grey-700)",
+            padding: "16px 24px",
+          }}
+          toastOptions={{
+            success: {
+              duration: 3000,
+            },
+            error: {
+              duration: 5000,
+            },
+          }}
+          gutter={12}
+          reverseOrder={false}
+        />
       </QueryClientProvider>
     </>
   );
