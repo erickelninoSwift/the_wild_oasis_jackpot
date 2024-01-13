@@ -18,8 +18,11 @@ export const deleteCabins = async (id) => {
   return data;
 };
 
-export const createCabins = async (data) => {
-  const { data, error } = await supabase.from("cabins").insert([data]).select();
+export const createCabins = async (newcabins) => {
+  const { data, error } = await supabase
+    .from("cabins")
+    .insert([newcabins])
+    .select();
   if (error) {
     console.log(error.message);
     throw new Error(`There was an error while creating new cabins ${error}`);
